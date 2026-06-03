@@ -1,0 +1,1001 @@
+% Style 2: "Sidebar Accent" — Charter font, dark blue accent bars
+\documentclass[letterpaper,11pt]{article}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{charter} % Charter font
+\usepackage[T1]{fontenc}
+\usepackage[svgnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{revnum}
+\usepackage[colorlinks=true,urlcolor=NavyBlue]{hyperref}
+\usepackage{tocloft}
+
+\definecolor{accent}{HTML}{003366}
+
+\setlength{\tabcolsep}{0in}
+\setlength\LTleft{0.2in}
+\setlength\LTright{0.2in}
+
+\setlist[itemize]{topsep=2pt, partopsep=0pt, parsep=0pt, itemsep=2pt, leftmargin=1.5em}
+\setlist[enumerate]{topsep=2pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=2em}
+
+%-----------------------------------------------------------
+% Custom commands
+
+\newcounter{daggerfootnote}
+
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+
+\newcommand{\resheading}[1]{%
+  \vspace{10pt}%
+  \noindent\textcolor{accent}{\rule{3pt}{12pt}}\hspace{6pt}%
+  {\large \textbf{\textcolor{accent}{#1}}}%
+  \vspace{2pt}%
+  \par\noindent\textcolor{accent!30}{\rule{\textwidth}{0.5pt}}%
+  \vspace{2pt}%
+}
+
+\newcommand*{\daggerfootnote}[1]{%
+    \setcounter{daggerfootnote}{\value{footnote}}%
+    \renewcommand*{\thefootnote}{\fnsymbol{footnote}}%
+    \footnote[2]{#1}%
+    \setcounter{footnote}{\value{daggerfootnote}}%
+    \renewcommand*{\thefootnote}{\arabic{footnote}}%
+}
+
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{\linewidth}[t]{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{\textcolor{accent}{#3}} & \textit{#4} \\
+\end{tabular*}\vspace{-2pt}}
+
+\newcommand{\ressubheadingb}[6]{
+\begin{tabular*}{\linewidth}[t]{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{\textcolor{accent}{#3}} & \textit{#4} \\
+		\textit{#5} & \textit{#6} \\
+\end{tabular*}\vspace{-2pt}}
+
+\newcommand{\ressubheadingc}[8]{
+\begin{tabular*}{\linewidth}[t]{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{\textcolor{accent}{#3}} & \textit{#4} \\
+		\textit{#5} & \textit{#6} \\
+		\textit{#7} & \textit{#8} \\
+\end{tabular*}\vspace{-2pt}}
+
+\newcommand\foo[9]{%
+    \def\tempb{#2}\def\tempc{#3}\def\tempd{#4}\def\tempe{#5}%
+    \def\tempf{#6}\def\tempg{#7}\def\temph{#8}\def\tempi{#9}%
+    \foocontinued
+}
+\newcommand\foocontinued[7]{}
+
+\newcommand{\ressubheadingd}[1]{%
+	\def\argten{#1}%
+	\ressubheadingdb
+}
+\newcommand{\ressubheadingdb}[9]{
+\begin{tabular*}{\linewidth}[t]{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{\argten} & #1 \\
+		\textit{\textcolor{accent}{#2}} & \textit{#3} \\
+		\textit{#4} & \textit{#5} \\
+		\textit{#6} & \textit{#7} \\
+		\textit{#8} & \textit{#9} \\
+\end{tabular*}\vspace{-2pt}}
+%-----------------------------------------------------------
+
+\begin{document}
+
+{\large \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{\LARGE \textcolor{accent}{Michael Guerzhoy}} &  guerzhoy@cs.toronto.edu\\
+Citizenship: Canadian & \href{http://www.cs.toronto.edu/~guerzhoy/}{http://www.cs.toronto.edu/\textasciitilde guerzhoy/} \\
+\end{tabular*}}
+\noindent\textcolor{accent}{\rule{\textwidth}{1.5pt}}
+\vspace{-2pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Highlights}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item
+	\textbf{Teaching:} Taught undergraduate and graduate courses in machine learning, data analysis, image processing and computer vision, programming, computer science theory, and data science, at levels ranging from first year courses to graduate courses. Organized co-curricular activities. Co-designed and delivered Computing for Medicine, a series of workshops in programming for medical school students. Co-designed an undergraduate program in data science
+\item
+	\textbf{CS Education:} Designed four assignments presented at the Model AI Assignments session at EAAI/AAAI, two assignments that were presented at the Nifty Assignments session at SIGCSE, three assignments presented at the TT\&C session at ITiCSE and one module presented at TeachNLP@ACL
+\item
+	\textbf{Research with undergraduates:} Over 20 research publications with a total of over 60 undergraduates
+\item \textbf{Service leadership:} Co-chair, Nifty Assignments project at SIGCSE, 2023-2027 (selectivity of $20\%$, the most popular session at SIGCSE, the premier North American CS Education conferences), Co-chair, Educational Advances in Artificial Intelligence Symposium (EAAI) at AAAI, the education symposium at the premier AI conference AAAI, 2021-2024
+
+\item \textbf{International competitions:} Member, Scientific Committee and Problem Composition Task Force, International Olympiad on Artificial Intelligence (IOAI), the premier international competition for high school students in AI, 2024-2026
+
+\item
+	\textbf{Research:} Research background in machine learning, computer vision,  spoken language processing, and applied statistics; winner of a Best Paper Award at the Canadian Conference on Artificial Intelligence, 2014
+\item
+	\textbf{Industry:} Industrial R\&D experience: researched, developed, and implemented a machine learning/computer vision method which is currently being used in a product
+\item
+	\textbf{Consulting:} Data science and statistical consultant for a variety of clients, including the Canadian Broadcasting Corporation's prime-time show Marketplace, Homestars.com  and several research groups at the University of Toronto
+\item
+	\textbf{Program design:} Major participant in the design of the Computing for Medicine program and the Data Science Specialist program at the University of Toronto; delivered the first offerings of SML310 -- Research Project in Data Science and SML480 -- Pedagogy of Data Science at Princeton
+\item
+	\textbf{Award:} Winner, Computer Science Student Union Excellence in Teaching Award, 2015/2016, University of Toronto
+
+\item
+	\textbf{Media:} Research covered in the media by multiple outlets, including \textit{New Scientist} and \textit{CBC}. Multiple appearances in outlets such as \textit{CBC}, \textit{CTV}, \textit{Global News}, \textit{The Toronto Star}, and foreign media.
+
+\end{itemize}
+\resheading{Employment History}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+	
+\item
+	\ressubheading{Assistant (promoted to Associate effective Jul. 2026) Professor, Teaching Stream}{2020 --  }{Division of Engineering Science, University of Toronto}{Toronto, ON}
+\begin{itemize}
+    \item Cross-appointed to Dept. of Mechanical \& Industrial Engineering (51\%), the Division of Engineering Science	(49\%), and Dept. of Computer Science (secondary appointment)
+    \item Responsible for delivering introductory computer science courses in Engineering Science, the University of Toronto's flagship undergraduate engineering program
+	\item Developed the second introductory CS course (ESC190) to be delivered in a mixture of C and Python
+	\item Integrated introductory material in AI/ML into the introductory CS sequence (ESC180/ESC190)
+	\item Supervising undergraduate thesis students and master's students, advising an undergraduate student machine learning club
+	\item Redeveloped and offered a new version of ECE324 -- Machine Intelligence, Software, and Neural Networks, a new course that follows up on an introductory machine learning course.
+
+	\item Developed and offered a summer mini-course in functional programming and data science
+	\item Developed and offered a reading-group course following Richard Feynman, \textit{The Character of Physical Law}
+\end{itemize}
+	\item
+	\ressubheading{Lecturer}{2018 -- 2020 }{Center for Statistics and Machine Learning, Princeton University}{Princeton, NJ}
+	\begin{itemize}
+		\item Designed and delivered the first two offerings of SML310 -- Research Projects in Data Science. Designed and delivered an interdisciplinary seminar course in data science for students majoring in subjects ranging from Computer Science to Sociology; supported individual major research projects undertaken as part of the course
+		\item Redesigned SML201 -- Introduction to Data Science. Redesigning an introductory course in data science aimed at all interested students on campus
+		\item Proposed, designed, and offered SML480 -- Pedagogy of Data Science, a new senior-level course
+		\item Supervised multiple student theses
+	\end{itemize}
+
+\item
+\ressubheading{Assistant Professor, Status Only}{2018 -- 2021 }{Dept. of Statistical Sciences, University of Toronto}{Toronto, ON}
+	\begin{itemize}
+		\item Collaborate with the Dept. of Statistical Sciences on teaching and research
+	\end{itemize}
+\item
+\ressubheading{Affiliate Scientist}{2018 --  }{Li Ka Shing Knowledge Institute, St. Michael's Hospital}{Toronto, ON}
+	\begin{itemize}
+		\item Collaborate with clinicians and scientists on projects applying data science to healthcare
+	\end{itemize}
+
+\item
+	\ressubheading{Senior Data Scientist -- Machine Learning}{2017 --  2018}{Centre for Healthcare Research, Analytics, and Training at St. Michael's Hospital}{Toronto, ON}
+	\begin{itemize}
+		\item Research and implement applications of machine learning to Electronic Health Record data at St. Michael's Hospital, a University of Toronto-affiliated teaching hospital
+		\item Supervise student interns
+		\item Lead projects on a machine learning-based early warning system for Internal Medicine patients and on large-scale automatic data extraction from free-form clinical notes
+	\end{itemize}
+
+\item
+	\ressubheading{Lecturer (2014-2017)/Sessional Lecturer (2014, 2018)}{2014-2018}{Dept. of Computer Science, University of Toronto}{Toronto, ON}
+	\begin{itemize}
+		\item Teach computer science courses, organize co-curricular activities for undergraduates, supervise independent research projects by undergraduates, supervise a Master of Science in Applied Computing student, co-design a new Data Science Specialist program
+	\end{itemize}
+
+\item
+	\ressubheading{Sessional Lecturer}{Jun-Aug 2016}{Dept. of Statistical Sciences, University of Toronto}{Toronto, ON}
+	\begin{itemize}
+		\item Teach a cross-listed undergraduate/graduate course in data analysis
+	\end{itemize}
+
+
+\item
+	\ressubheading{Coordinator, Computing for Medicine Initiative}{Winter-Summer 2016}{Dept. of Computer Science and Faculty of Medicine, University of Toronto}{Toronto, ON}
+	\begin{itemize}
+		\item Design and deliver a course in computer programming and medical applications of computer science for students in the School of Medicine
+	\end{itemize}
+
+\item
+	\ressubheading{Data Scientist}{2013 -- }{Independent Consultant}{Toronto, ON}
+	\begin{itemize}
+		\item Consult for external clients (e.g., the Canadian Broadcasting Corporation (CBC), Homestars.com) and University community members on data science and statistics.	
+	\end{itemize}
+
+\item	
+	\ressubheading{Visitor: Research/Engineering}{2012-2013}{Team LEAR, Inria Grenoble Rhone-Alpes}{Grenoble, France}
+
+	\begin{itemize}
+		\item Conduct research in computer vision and participate in a technology transfer project
+	\end{itemize}
+\item
+	\ressubheading{Course Instructor}{2009, 2010, 2014}{Dept. of Computer Science, University of Toronto}{Toronto, ON}
+	\begin{itemize}
+		\item Teach undergraduate computer science courses.
+	\end{itemize}
+\item
+	\ressubheading{Research Assistant}{2007-2009, 2011 -- 2012}{Dept. of Computer Science, University of Toronto}{Toronto, ON}
+	\begin{itemize}
+		\item Conduct research in computer vision and machine learning
+	\end{itemize}
+\item
+	\ressubheading{Teaching Assistant}{2007 -- 2010, 2013 -- 2014}{Dept. of Computer Science, University of Toronto}{Toronto, ON}
+	\begin{itemize}
+		\item Conduct tutorials, facilitate labs, and grade exams and assignments in undergraduate computer science courses.
+	\end{itemize}
+
+\item
+	\ressubheading{Software Developer}{2004-2005, 2006}{Epson Canada}{Toronto, ON}
+	\begin{itemize}
+		\item Invent novel computer vision and image processing algorithms, implement  and optimize them in order to  incorporate them in Epson's products
+	\end{itemize}
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item
+	\ressubheading{Master of Science in Statistics}{2013 -- 2014 }{University of Toronto}{Toronto, ON}
+	\begin{itemize}
+		\resitem{Research projects: ``Regularization of Log-Linear Models of Travel Data,"  (Advisor: Ruslan Salakhutdinov), ``Hierarchical Bayesian Models for Ranking" (Advisor: Nathan Taback)}
+	\end{itemize}
+
+\item
+	\ressubheading{Master of Science in Computer Science}{2007 -- 2010}{University of Toronto}{Toronto, ON}
+	\begin{itemize}
+		\resitem{Advisor: Allan D. Jepson}
+		\resitem{Topic: Speech analysis using object detection techniques applied to spectrograms. Project title: ``Boosting Local Spectro-Temporal Features for Speech Analysis"}
+	\end{itemize}
+
+\item
+	\ressubheading{Honours Bachelor of Science}{2002 -- 2007}{University of Toronto}{Toronto, ON}
+	\begin{itemize}
+		\resitem{Specialist concentration in \textbf{Mathematics and Its Applications}, major in \textbf{Computer Science}, minor in \textbf{Statistics}}
+	\end{itemize}
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Teaching Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+	\item
+	\ressubheading{Introduction to Computer Programming (CSC180/ESC180)}{University of Toronto}{Instructor}{Fall 2014-2016, 2020-2024}
+	\begin{itemize}
+		\resitem{Taught two sections of a total of 300 students, supervising 18 teaching assistants}
+		\resitem{Designed and ran a tournament for AI game engines for the game of Pong. Thirty students participated}
+	\end{itemize}
+
+\item 
+	\ressubheading{Computer Algorithms and Data Structures (ESC190)}{University of Toronto}{Instructor}{Winter 2020}
+	\begin{itemize}
+		\resitem{Redesigned and delivered a CS2 course in C to 350 students}
+	\end{itemize}
+\item
+	\ressubheading{Machine Intelligence, Software, and Neural Networks (ESC324)}{University of Toronto}{Instructor}{Winter 2022, Winter 2023}
+	\begin{itemize}
+		\resitem{Designed and delivered a project-based second course in machine learning and neural networks to classes of 60-80 students}
+	\end{itemize}
+\item 
+
+	\ressubheading{Introduction to Data Science (SML201)}{Princeton University}{Instructor}{Spring 2019, Spring 2020}
+	\begin{itemize}
+		\resitem{Redesigned the course to incorporate active learning during precepts (a.k.a. tutorials)}
+		\resitem{Course rated as having the highest ``Overall quality" of all introductory statistics offerings at Princeton since 2015 }
+	\end{itemize}
+\item
+	\ressubheading{Pedagogy of Data Science (SML480)}{Princeton University}{Instructor}{Spring 2020}
+	\begin{itemize}
+		\resitem{Designed and delivered a novel course on the pedagogy of data science}
+		\resitem{Engaged 10 seminar students in an ongoing pedagogical research project}
+	\end{itemize}
+\item	
+	\ressubheading{Research Projects in Data Science (SML310)}{Princeton University}{Instructor}{Fall 2018, Fall 2019}
+	\begin{itemize}
+		\resitem{Designed a course aimed at students in both STEM and the social sciences}
+		\resitem{Course aims to enable students across campus to incorporate data science into their research}
+		\resitem{First cohort was 50\% social sciences and 50\% STEM students}
+		\resitem{Designed lecture, assignments, and Python workshops}
+		\resitem{Grew the course from 12 to 21 students over 2018-2019. The second offering received a 4.76/5.00 overall quality rating, higher than any SML course on record}
+	\end{itemize}
+\item
+	\ressubheading{Machine Learning and Data Mining (CSC411/CSC2515)}{University of Toronto}{Instructor}{Winter 2017, Winter 2018}
+	\begin{itemize}
+		\resitem{Taught the Dept. of Computer Science's fourth-year-level introductory Machine Learning course. The student population included Computer Science majors and Robotics Engineering majors. In 2018, the course was cross-listed, with the target audience being first-year graduate students in Computer Science and other disciplines}
+		\resitem{Redesigned the course assignments to use Google's TensorFlow package}
+		\resitem{Designed an assignment on Policy Gradient-based Reinforcement Learning suitable for an introductory Machine Learning course}
+	\end{itemize}
+
+\item
+	\ressubheading{Methods of Data Analysis II (STA303)}{University of Toronto}{Instructor}{Winter 2016}
+	\begin{itemize}
+		\resitem{Taught a third-year course in methods of data analysis; supervised 2 teaching assistants}
+		\resitem{Designed assignments emphasizing data analysis, data processing, and data visualization}
+		\resitem{Institutional Composite Mean: 4.2/5}
+	\end{itemize}
+	\item
+	\ressubheading{Intro to Neural Networks and Machine Learning (CSC321)}{University of Toronto}{Instructor}{Winter 2016}
+	\begin{itemize}
+		\resitem{Designed and taught a large (over 100 students) third-year course in neural networks and machine learning; supervised 6 teaching assistants.}
+		\resitem{Substantially redesigned the curriculum of previous years' offerings of the course. Designed new assignments. Redesigned the course to use Google's TensorFlow package}
+		\resitem{Won the Computer Science Student Union (CSSU) Teaching Award for 2015/2016, for designing and teaching CSC321}
+	\end{itemize}
+\item 
+	\ressubheading{Computing for Medicine}{University of Toronto}{Instructor}{2016}
+	\begin{itemize}
+		\resitem{Co-designed and co-taught an introductory course in computing for medical students in the University of Toronto Faculty of Medicine}
+		\resitem{Designed lectures and projects specifically tailored for medical students}
+		\resitem{Program description: \url{https://www.utoronto.ca/news/bridging-disciplinary-divide}}
+	\end{itemize}
+\item 
+	\ressubheading{Senior Project Courses (CSC492, CSC494, CSC495, GGR447)}{University of Toronto}{Instructor}{Fall 2015-}
+	\begin{itemize}
+		\resitem{Supervising undergraduate students working on senior year-level projects in data analysis and machine learning.}
+	\end{itemize}
+\item
+	\ressubheading{Introduction to Visual Computing (CSC320)}{University of Toronto}{Instructor}{Winter 2015}
+	\begin{itemize}
+		\resitem{Designed and taught a large (over 100 students) third-year course in image processing and computer vision with an emphasis on examples from computational photography; supervised 6 teaching assistants.}
+		\resitem{Substantially redesigned the curriculum of previous years' offerings of the course. Designed new assignments. Switched the course to using the Python/NumPy scientific computing stack. Introduced a ``big-data"-flavoured assignment. }
+		\resitem{Institutional Composite ratings: 4.5/5.0 and 4.6/5.0. Overall Quality ratings:  4.4/5.0 and 4.3/5.0}
+	\end{itemize}
+
+\item
+	\ressubheading{Mathematical Expression and Reasoning for CS (CSC165)}{University of Toronto}{Instructor}{Summer 2014}
+	\begin{itemize}
+		\resitem{Taught a class of about 100 students, supervising 5 teaching assistants}
+	\end{itemize}
+
+\item
+	\ressubheading{Introduction to Computer Programming (CSC180)}{University of Toronto}{Instructor}{Fall 2009, Fall 2010}
+	\begin{itemize}
+		\resitem{Taught the Introduction to Programming course in the Engineering Science program, delivered lectures to a class of over 100 students, co-supervised 16-19 teaching assistants, prepared course materials}
+		\resitem{In 2010, co-taught the inaugural offering of the course using Python. The course was taught in C in 2009 and previous years}
+		\resitem{Teaching rated by students as 6.00/7.00 (``Very Good." Faculty average is 5.47/7.00) in 2009 and 6.11/7.00 in 2010. In 2009, students' enthusiasm for the course increased from 4.54/7.00 at registration time to 5.44/7.00 at completion time (on average in the Faculty, enthusiasm decreases from 4.60/7.00 to 4.56/7.00)}
+	\end{itemize}
+
+
+\item 
+	\ressubheading{Various Computer Science Courses}{University of Toronto}{Teaching assistant}{2007-2010}
+	\begin{itemize}
+		\resitem{Teaching assistant, Computer Science Help Centre, 2010, 2013, 2014}		
+		\resitem{Head teaching assistant, Introduction to Computer Programming (CSC180), 2008}
+		\resitem{Teaching assistant, Algorithm Design and Analysis (CSC373), 2008}
+		\resitem{Teaching assistant, Mathematical Expression and Reasoning for CS (CSC165), 2008}
+		\resitem{Teaching assistant, Introduction to Computer Programming (CSC180), 2007}
+	\end{itemize}
+
+\end{itemize}
+
+
+\resheading{Development of Co-curricular Activities}
+\begin{itemize}
+\item
+	\textbf{AI Engines for Pong Tournament}: developed and ran course-wide and University-wide tournaments for AI engines for the computer game of Pong, with dozens of participants in 2015 and 2016. See \url{http://www.cs.toronto.edu/~guerzhoy/pong2015/}.
+\item
+	\textbf{University of Toronto Data Science Group}: work with a group of undergraduate students who are interested in working on problems in Data Science. Facilitate meetings, give tutorials on machine learning, and suggest ideas for students to work on.
+\item
+	\textbf{Guest talk}: ``Why Computer Scientists Care About Statistics (or Eat Your Vegetables)": a guest talk given to STA247 students in 2014 and 2016. STA247 is a 400-student class introducing Probability Theory and aimed mostly at Computer Science students. The talk explains machine learning and data science in terms of elementary probability theory.
+
+\end{itemize}
+
+\newpage
+\resheading{Student supervision -- Undergraduate}
+\begin{enumerate}
+
+
+
+    \item
+    \textbf{Rachel Chan}, LLMs for large-scale social media analysis for insights on the nosology of chronic disease, EngSci thesis, 2025-2026
+
+	
+    
+    \item 
+    \textbf{Lucia Sun}, LLMs for large-scale social media analysis for insights on career trajectories in computing, EngSci thesis, 2025-2026
+
+    \item
+    \textbf{Zhi (Whitney) Ji}, Shape-Based Features Complement CLIP Features and Features Learned from Voxels in 3D Object Classification, EngSci thesis, Summer 2025
+
+    \item
+	\textbf{Minchan Kim}, Machine learning for exploring perception of brilliance in music, EngSci thesis, 2024-2025
+
+	\item
+	\textbf{Paul Yan}, Interpreting rotation-variant features in image classification using vision transformers, EngSci thesis, 2024-2025
+
+	\item
+	\textbf{Andy Cai}, Learning representations of microstructures in spatial statistics space for materials design, EngSci thesis, 2024-2025
+
+	\item
+	\textbf{Ritvik Singh}, Optimizing optical spectrometry-based measurement of soil nutrients, EngSci thesis, 2024-2025
+
+	\item
+	\textbf{Sophie Lee}, Quantifying the Complexity of Literary Fiction, EngSci thesis, 2023-2025
+	\item
+        \textbf{Gary Liang}, \textbf{Ronaldo Luo}, \textbf{Cindy Liu}, \textbf{Adam Kabbara}, \textbf{Minahil Bakhtawar}, \textbf{Kina Kim}, undergraduate project on the cognitive science of the game of Wordle, 2024-
+    
+	\item
+	\textbf{Juho Kim}, Exploring the ``Honour Culture" Theory Using Social Media Data, EngSci thesis, 2023-2024
+
+	
+	\item
+	\textbf{Kailyn Yoon}, Exploring the Moral Foundations Theory Using Social Media Data, EngSci thesis, 2023-2024
+
+
+	\item
+	\textbf{Yiping Wang }, Interpretability of ViT when Colour is an Important Cue, EngSci thesis, 2023-2024
+
+
+	\item
+	\textbf{Cameron Smith}, Interpretability of ConvNets when Colour is an Important Cue, EngSci thesis, 2023-2024
+
+	
+
+	\item
+	\textbf{Amy Saranchuk}, Interpretability for Self-Supervised Models, EngSci thesis, 2023-2024
+
+
+	\item
+	\textbf{Jason Zuo}, How do Transformers Use (And Don't Use) Positional Encoding?, EngSci thesis, 2023-2024
+
+	\item
+	\textbf{Haani Ahmed}, Speeding Up Reinforcement Learning by Selecting Pretrained Models using Guided Backpropagation, EngSci thesis, 2023-2024
+
+	\item
+	\textbf{Tracy Qian}, WGANs for Model Checking of Hierarchical Models for Small Datasets, EngSci thesis, 2023-2024
+
+
+	\item
+	\textbf{Niko Marinkovich}, Analyzing the Observed Phenomenon that Computer Chess Beat Humans Much Earlier than Computer Go, EngSci thesis, 2023-2024
+
+	\item
+	\textbf{Kamron Zaidi}, Machine Learning of Understanding Brilliant Moves in Board Games, EngSci thesis, 2023-2024
+	\item
+	\textbf{Sajjad Hashemi}, Improving the cost function of variational autoencoders for material design, Argonne National Laboratory project, 2023-
+
+	\item
+	\textbf{Pavlos Constas, Vikram Rawal, Matthew Honorio Oliveira, Andreas Constas, Aditya Khan, Kaison Cheung, Najma Sultani, Carrie Chen, Micol Altomare, Michael Akzam, Jiacheng Chen, Vhea He, Lauren Altomare, Heraa Murqi, Asad Khan, Nimit Amikumar Bhanshali, Youssef Rachad}, Toward A Reinforcement-Learning-Based System for Adjusting Medication to Minimize Speech Disfluency, summer research project	
+
+	\item
+	\textbf{Ian Wu and Youssef Rachad}, Developing materials for introductory computer science courses, work-study students, 2023
+
+	\item
+	\textbf{Jackson Kaunismaa},  Mechanistic Interpretation of Neural Networks, work-study researcher student, 2023
+
+	\item 
+	\textbf{George Saad}, Using Pre-Training to Speed Up Deep Reinforcement Learning (UofT EngSci thesis, 2022-2023)
+	\item 
+	\textbf{Vo Yoang}, Investigating How Meaning is Stored and Manipulated by Transformers (UofT EngSci thesis, 2022-2023)
+	\item 
+	\textbf{Noelle Lim}, Using Machine Learning Transformers to Detect Comorbid Anxiety and ADHD (UofT EngSci thesis, 2022-2023)
+	\item 
+	\textbf{Jonathan Spraggett}, Sim2Real Reinforcement Learning for Soccer skills (UofT EngSci thesis, 2022-2023)
+	\item 
+	\textbf{Shardul Ghuge}, Multivariate Time Series Forecasting of Patients' Health using LSTM (UofT EngSci thesis, 2022-2023)
+
+
+
+
+
+% \item
+% \textbf{Jonathan Spragett}, Learning robot soccer-ball-kicking behvaviour with reinforcement learning. Engineering Science Thesis, 2021-2022. 
+
+\item
+\textbf{Mustajab Azam, Sajjad Hashemi, Shahzeb Ahmed}, Variational Autoencoders for Material Design, MIE Capstone Project, 2023
+
+\item
+\textbf{Morgan Sun}, Generating Novel Hypotheses from Complex Models of Clinical Data. Engineering Science Thesis, 2021-2022. 
+
+
+\item
+\textbf{Chi-Chung Cheung}, Learning to play Go by playing on smaller Go boards.  Engineering Science Thesis, 2021-2022. 
+
+\item
+\textbf{Yize Zhao},   Improving content-based video retrieval. Engineering Science Thesis, 2021-2022. 
+
+\item
+\textbf{Eric Wang}, Learning robot walking behaviour with reinforcement learning. Engineering Science Thesis, 2021-2022. 
+
+
+\item
+\textbf{Michael Ruan}, Improving Sample Efficiency of Deep Reinforcement Learning With
+State Representation Learning. Engineering Science Thesis, 2021-2022. 
+
+
+\item
+	\textbf{Daniel Pinheiro Leal},  Pretraining to speed up reinforcement learning for control tasks. Engineering Science Thesis, 2020-2021. 
+\item
+	\textbf{Theodore Block}, The Triple Descent Curve when Training Single-Hidden-Layer Neural Networks. Engineering Science Thesis, 2020. 
+\item
+	\textbf{Calvin Tan},  Pretraining to speed up Q-learning for card games with large feature spaces. Engineering Science Thesis, 2020-2021 
+\item
+	\textbf{Coco Zhang}, Guided Backpropagation and Color in Natural Images. Engineering Science Thesis, 2020-2021
+\item
+	\textbf{Anthony Hein, Vydhourie Thiyageswaran, May Jiang}, An AI Agent for the game of Gin Rummy, 2020-2021. Undergraduate project
+\item
+	\textbf{Vydhourie Thiyageswaran}, Transformer Architectures for Reinforcement Learning. Princeton CSML certificate project, 2020-2021.
+\item
+	\textbf{Claire S. Lee}, Classifying and Understanding Affective States in Bipolar Disorder from Video. Princeton Senior Independent Work, 2020.
+\item
+	\textbf{Daniel K. Chae}, Generating Novel Hypotheses from Complex Models of Clinical Data, Princeton Senior Independent Work, 2020.
+\item
+	\textbf{Niranjan Shankar}, Text Classification from Small Datasets. Princeton Senior Independent Work, 2020.
+\item
+	\textbf{Ryan Lee}, Investigating the Double Descent Curve, Princeton Math junior paper, 2020. 
+\item
+	\textbf{Max Piasevoli}, Generative Adversarial Networks for Model Checking. Princeton Senior Independent Work, 2020.
+\item
+	\textbf{Preeti Iyer}, Understanding Urban Mobility in NYC with Latent Factor Models. Princeton  Senior Thesis, 2020.
+\item
+	\textbf{Georgy Noarov}, Building a Large-Scale Dataset of Fake News. Independent work, Princeton university. 2019-2020.
+\item
+	\textbf{Ananya Joshi}, Building a Liberal to Conservative Moral Translator. Princeton Senior Thesis. Co-supervisor and second reader (weekly meetings). Winter 2019.  (at Princeton University)
+\item
+	\textbf{Yoonsun You}, Registration of the Cervical Spine in CT Images. ESC494 -- Engineering Science Thesis, Fall 2018-Winter 2019 (at the University of Toronto)
+\item
+	\textbf{Navid Korhani}, Text Classification for Small Datasets Using Transfer Learning. ESC494 -- Engineering Science Thesis, Fall 2018-Winter 2019 (at the University of Toronto)
+\item
+	\textbf{Sam Banning}, Information Extraction from Clinical Progress Notes using Recurrent Neural Networks. CSC494 -- Project in Computer Science, Fall 2017
+
+\item
+	\textbf{Joshua Samson-Seltzer}, Convolutional Neural Networks for Camera Trap Data.  Co-supervisor: Prof. Monika Havelka, Department of Geography, University of Toronto. GGR417 -- Honours Thesis in Geography. Fall 2016-Winter 2017
+\item
+	\textbf{Ujash Joshi}, Photo Orientation with Convolutional Neural Networks. CSC494/495 -- Project in Computer Science, Summer-Fall 2016
+\item
+	\textbf{Omobola Okesanjo}, Demonstration in Reinforcement Learning. CSC494 -- Project in Computer Science, Fall 2016
+\item
+	\textbf{Davi Frossard}, Human Travel Modelling with Recurrent Neural Networks. Informal supervision of a research project. Summer 2016-
+\item
+	\textbf{Karo Castro-Wunsch}, Recurrent Neural Network and Spectral Feature based Music Analysis and Generation. CSC492 -- Project in Computer Science, Winter 2016	
+\item
+	\textbf{Ramaneek Gill}, Twitter Hashtag Recommendation and Analysis. CSC494/CSC495 -- Project in Computer Science, Fall 2015-Winter 2016
+\end{enumerate}
+
+\resheading{Student supervision -- Graduate}
+
+\begin{enumerate}
+ 
+\item
+	\textbf{Sanjana Neelisetty Balaji}, Agentic Multi-Model Pipeline for Invoice Automation, MSc in Applied Computing industry project, 2025-2026
+\item
+	\textbf{Dawn Duan}, Using LLMs to facilitate meta-analysis and Empirical Standards checklist compliance checking, UTIAS M. Eng. project, 2023-2025
+\item
+	\textbf{Kexin Chen}, Using Social Media Data to Explore Complex Disease, M. Eng. project, 2023-2024 and Research and Development of an AI based Software to Recognize
+Realtime TV Commercials on Low-power Computing Equipment, Mitacs internship, 2024-2025
+\item 
+        \textbf{Chuyi Hou}, Research and Development of an AI based Software to Recognize
+Realtime TV Commercials on Low-power Computing Equipment, Mitacs internship, 2024-2025
+\item
+	\textbf{Zixuan Wan}, Enabling Automatic Checking of Empirical Standards Criteria for Academic Publishers, M. Eng project, 2023-2024
+\item
+	\textbf{Houze Xu}, Text mining API for automated keywords extraction and tag analysis. Mitacs internship, 2023-2024 
+\item 
+	\textbf{Danting Dong}, Extracting Receipt Images from Smartphone Photos.  Academic supervision for a Master of Science in Applied Computing industrial internship at Sensibill, University of Toronto, 2021 
+
+
+\item
+	\textbf{Elisa Du}, Robust Taxonomy out of Receipt Item Labels.  Academic supervision for a Master of Science in Applied Computing industrial internship at Sensibill, University of Toronto, 2021 
+
+\item
+	\textbf{Vijaykumar Maraviya}, Recommendation Systems for Assigning Peer Reviewers. Industry intern in a Master of Engineering program, University of Toronto, 2021.
+\item
+	\textbf{Thi Hai Van Do}, Convolutional Neural Networks for Retail Product Classification. Academic supervision for a Master of Science in Applied Computing industrial internship at Wish (ContextLogic Inc.). Industry supervisor: Dr. Yuli Ye. 2017-2018.
+
+\end{enumerate}
+
+\resheading{Student supervision committees -- Graduate}
+\begin{enumerate}
+	\item \textbf{Sean Robertson}, PhD in Computer Science (Advisor: Gerald Penn). Committee member. 2023 (graduated)
+	\item \textbf{Tomas Tokar}, PhD in MIE (Advisor: Scott Sanner). Committee member. 2023-2025.
+
+\end{enumerate}
+
+\resheading{Service}
+\begin{itemize}
+\item
+    \textbf{Member}, International Scientific Committee and \textbf{member}, problem taskforce, International Olympiad on Artificial Intelligence, 2024-2026.
+\item
+    \textbf{Track co-chair}: Nifty Assignments at the Technical Symposium on Computer Science Education (SIGCSE), 2023-2027.
+    
+    \textbf{Symposium co-chair}: The Symposium on Educational Advances in Artificial Intelligence, 2021, 2022, 2023.
+\item 
+	\textbf{Award committee member}: AAAI/EAAI Patrick Henry Winston Outstanding Educator Award, 2023
+
+\item
+	\textbf{PC member}: Canadian Conference on Artificial Intelligence (2018-). Symposium on Educational Advances in Artificial Intelligence at AAAI -- main track, Model Assignments track, and  Diversity and Inclusion in AI Education track (2020-)
+
+\item 
+\textbf{Grant application reviewer}: Natural Sciences and Engineering Research Council of Canada
+ (2026), Swiss National Foundation (2024), University of Toronto-University of Illinois System Joint Call for Proposals (2024)
+
+\item
+\textbf{Reviewer}:  International Joint Conference on Artificial Intelligence  IJCAI-ECAI (2026), Annual Meeting of the Association for Computational Linguistics
+ (2026), Conference of the European Chapter
+of the Association for Computational Linguistics (2026), IEEE Signal Processing Letters (2026), SIGCSE TS (2018-2025), EAAI (2018-2026), ACL (2024, 2025), EMNLP (2024, \textbf{outstanding reviewer}), IEEE Transactions on Neural Networks and Learning Systems (2018-2019), EngageCSEdu (2019-2021), Cambridge University Press (2019), CRC Press (2019), MIT Press (2020-2023), International Conference on Bioinformatics and Biomedicine (2023), Western Canadian Conference on Computer Science Education (2024), Journal of Medical Internet Research (2024), PLoS One (2020-2024).
+\item
+	\textbf{Teaching Methods and Resources Committee, Faculty of Applied Science and Engineering}, member (2020-2022), vice-chair (2023-2024, 2024-2025)
+\item	
+	\textbf{MSc in Applied Computing committee}, member (2021-2022)
+\item
+	\textbf{Toronto Machine Learning Summit, 2017-2018}: member of the steering committee. Responsible for reviewing the proposed talks. The Toronto Machine Learning Summit (TMLS) is a new conference for academics and industry professionals.
+\item
+	\textbf{Data Science Committee, 2015}: sit on a committee designing the new Data Science Specialist program at the University of Toronto. Co-wrote the program brief. The program proposal was accepted, with the first students in the program to begin their studies in 2018.
+\item
+	\textbf{Computer Science Undergraduate Committee, 2014-2015}: sit on a committee advising the Undergraduate Chair on matters of undergraduate education in the Dept. of Computer Science. Proposed amendments to the calendar that were subsequently accepted. Communicated with Karen Wong (the STA247) concerning the Dept. of Computer Science's desiderata for STA247.
+\item	
+	\textbf{Master of Science in Applied Computing (MScAC) Admissions Committee, 2015-2016}: review student applications for the MScAC  program.
+
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Research and Industry Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item 
+	\ressubheading{Senior Data Scientist/Affiliate Scientist}{2017-2023}{Centre for Healthcare Research, Analytics and Training at St. Michael's Hospital}{Toronto, ON}
+	\begin{itemize}
+		\item Research and implement applications of machine learning to Electronic Health Record data at St. Michael's Hospital, a University of Toronto-affiliated teaching hospital
+		\item Supervise student interns
+		\item Lead projects on a machine learning-based early warning system for Internal Medicine patients and on large-scale automatic data extraction from free-form clinical notes
+	\end{itemize}
+\item	
+	\ressubheading{Data Scientist}{2013-}{Occasional consultant for outside clients (paid) and university members  (free)}{Toronto, ON}
+	\begin{itemize}
+		\resitem{Clients include CBC's prime-time show Marketplace (with the results of my project used on air), Homestars.com  and several research groups at the University of Toronto}
+	\end{itemize}
+\item
+	\ressubheading{Master's student}{2013-2014}{Dept. of Statistical Sciences, University of Toronto}{Toronto, ON}
+	\begin{itemize}
+		\resitem{Conduct research in log-linear models and ranking using hierarchical models}
+		\resitem{Taking standard graduate courses in statistical sciences}
+	\end{itemize}
+\item
+	\ressubheading{Visiting researcher/engineer}{2012 -- 2013}{INRIA (French National Institute for Research in Computer Science)}{Grenoble, France}
+	\begin{itemize}
+		\resitem{Conduct research and development for an industrial partner of the LEAR Team within INRIA Grenoble}
+		\resitem{Develop computer vision algorithms for feature point localization on 3D objects}
+		\resitem{Applied Histogram-of-Gradients-based object detection to the PASCAL Challenge dataset and the industrial partner's dataset}
+	\end{itemize}
+\item 
+	\ressubheading{Research assistant}{2011 -- 2012}{Dept. of Computer Science, University of Toronto}{Toronto, ON}
+	\begin{itemize}
+		\resitem{Developed machine learning methods for modeling human travel}
+		\resitem{A conference paper and a workshop paper based on this work were published. Work is ongoing.}
+	\end{itemize}
+
+
+\item
+	\ressubheading{Master's student}{2007 -- 2010}{Dept. of Computer Science, University of Toronto}{Toronto, ON}
+	\begin{itemize}
+		\resitem{For the master’s project, proposed, implemented, and evaluated a phonetic classification method based on applying object detection techniques to spectrograms. Used the Viola-Jones framework using various features for the base classifiers. Showed that large local Histogram-of-Gradients features which are not interpretable as edge detectors are useful for phonetic classification. Found an effective way to do multi-class classification in the proposed framework. Evaluated multiple ways to deal with the fact that phonetic objects' aspect ratios in the spectral domain are not fixed}
+		\resitem{Worked on several ideas for improving the Viola-Jones framework}
+	\end{itemize}
+\item
+	\ressubheading{Software developer}{Summer 2007}{Epson Canada}{Toronto, ON}
+	\begin{itemize}
+		\resitem{Researched, wrote plans/proposals, and implemented the prototype of a module for the detection of cats in photos}
+	\end{itemize}
+\item
+\ressubheading{Software developer}{2005 -- 2006}{Epson Canada}{Toronto, ON}
+	\begin{itemize}
+		\resitem{Researched, developed, and implemented a method (photo orientation detection) \textbf{which is currently used in Epson's scanner driver}}
+		\resitem{Researched, developed, and implemented computer vision and machine learning algorithms. Worked on segmentation, natural image statistics, and object detection}
+		\resitem{Received the \textbf{President's R\&D Award (Level III)}}
+	\end{itemize}
+
+		
+
+\end{itemize}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Awards}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+	\resitem{Computer Science Student Union (CSSU) Teaching Award, 2015/2016, University of Toronto}
+	\resitem{Best Paper Award at the Canadian Conference on Artificial Intelligence (AI 2014), 2014, for \underline{Michael Guerzhoy} and Aaron Hertzmann, \textit{Learning Latent Factor Models of Travel Data for Travel Prediction and Analysis}}
+	\resitem{President's R\&D Award (Level III), Seiko Epson Corporation, ``for the development of advanced key technology," 2006}
+	\resitem{National Science and Engineering Council of Canada Postgraduate Scholarship -- Master's (NSERC PGS-M) (\$17,300), 2008 -- 2009}		
+	%\resitem{Helen Sawyer Hogg Graduate Admission Award, Dept. of Computer Science, University of Toronto (\$5,000), 2007}
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Publications}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{-0.15in}\subsection*{Refereed Publications {\mdseries(available at \hyperref{http://www.cs.toronto.edu/~guerzhoy/}{}{}{http://www.cs.toronto.edu/~guerzhoy/}})}
+
+
+My supervisees are in bold. 
+
+% make the following paragraph small
+ \textit{Context}: Computer science researchers usually publish in conferences rather than journals. Venues such as \textbf{NeurIPS, AAAI, ICLR, ACL, NAACL, EMNLP}, and \textbf{ICCV} are top-tier conferences in AI, machine learning, natural language processing, and computer vision. Workshops associated with those are less selective, but are run in conjunction with the main conferences and chaired by researchers from top-tier institutions. \textbf{EACL and COLING} are slightly below top tier in NLP, but close to \textbf{ACL/NAACL/EMNLP}. \textbf{AACL} is newer, and likely currently somewhat below \textbf{EACL/COLING}. \textbf{CRV} is the local Canadian conference on computer vision and robotics, chaired by prominent Canadian faculty. AIME is a respected international conference, though not top-tier. \textbf{SIGCSE, ICER}, and \textbf{ITiCSE} are top-tier international conferences in computing education. \textbf{Koli Calling} is a well-respected smaller conference, but perhaps just below top-tier, with reviewing that's arguably more rigorous than the larger conferences. \textbf{EAAI} is the main AI Education conference, held in conjunction with \textbf{AAAI}. Publications in \textbf{EAAI} are published in the \textbf{AAAI} proceedings. \textbf{SSC} is the main annual conference of the Statistical Society of Canada, attracting a substantial proportion of Canadian statisticians. \textbf{IC$^2$S$^2$} is a well-respected non-archival conference in computational social science, attracting a very substantial proportion of the worldwide computational social science community. \textbf{ICCC} is the only conference of the small computational creativity field and top researchers publish there. (Although it is possible that people prefer to submit to more generalist venues such as AAAI when that seems appropriate.)
+
+
+\begin{revnumerate}
+\item
+\underline{Michael Guerzhoy}, \textit{Towards Formalizing Skepticism of Language Models: A Taxonomy in the Language of the Theory of Computation
+}, at the Philosophy Meets Machine Learning workshop (PhilML) at the International Conference on Machine Learning (ICML), 2026 (accepted, non-archival)
+
+\item
+\underline{Michael Guerzhoy}, \textit{Hopfield Networks in CS1}, in Proc. of the Annual ACM Conference on Innovation and Technology in Computer Science Education (ITiCSE), 2026 (accepted)
+
+\item
+    \underline{Michael Guerzhoy}, \textit{Barriers to Complexity-Theoretic Proofs that ``AGI" Using Machine Learning is Impossible}, in \textit{Comput. Brain \& Behav.}, 2026 (early online publication, in press)
+
+\item
+    Joël Porquet-Lupine, Maria Ebling, Dan Garcia, Colleen Lewis, \underline{Michael Guerzhoy}, Bill Siever, Ben Stephenson and Jim Williams, \textit{Sticky Analogies}, in Proc. of the  Technical Symposium on Computer Science Education (SIGCSE TS), Birds-of-Feather track, 2026 
+
+\item \textbf{Gary Liang}, \textbf{Adam Kabbara}, \textbf{Cindy Liu}, \textbf{Ronaldo Luo}, \textbf{Kina Kim}, and \underline{Michael Guerzhoy}, \textit{Semantic, Orthographic, and Morphological Biases in Humans' Wordle Gameplay}, in  Findings of the International Joint Conference on Natural Language Processing \& Asia-Pacific Chapter of the Association for Computational Linguistics (IJCNLP-AACL), 2025
+
+\item \textbf{Paul Yan, Amy Saranchuk} and \underline{Michael Guerzhoy}, \textit{Response Patterns to Rotation Angle in a Rotation Pretext Task Vary Across Datasets and Architectures: An Observation and a Negative Result}, at the Symmetry and Geometry in Neural Representations Workshop (NeurReps) at the Annual Conference on Neural Information Processing Systems (NeurIPS) 2025 (non-archival)
+
+\item \textbf{Mengli (Dawn) Duan} and \underline{Michael Guerzhoy}, \textit{Automatically Extracting Scientific Metrics with LLMs: A Case Study of ImageNet Papers}, Workshop on Evaluating the Evolving LLM Lifecycle: Benchmarks, Emergent Abilities, and Scaling at the Annual Conference on Neural Information Processing Systems (NeurIPS), 2025 (non-archival).
+
+\item \underline{Michael Guerzhoy} and Liam Ernst-Selway, \textit{GPT is Coming to Class}, Education Program at the  Annual Conference on Neural Information Processing Systems (NeurIPS) 2025 (non-archival)
+
+\item \underline{Michael Guerzhoy}, \textit{Understanding How Neural Networks See  (and read): A Slide Deck},  Education Program at the Annual Conference on Neural Information Processing Systems (NeurIPS) 2025 (non-archival). \textbf{Selected for oral presentation (20\% of total acceptances)}.
+
+
+\item \textbf{Andy Cai}, \textbf{Sajjad Hashemi}, Noah Paulson, and \underline{Michael Guerzhoy}, \textit{Latent Representation of Microstructures using Variational Autoencoders with Spatial Statistics Space Loss}, Workshop on Efficient Computing under Limited Resources (ECLR) at the International Conference on Computer Vision (ICCV), October 2025 
+
+\item \textbf{Zhi (Whitney) Ji} and \underline{Michael Guerzhoy}, \textit{Shape-Based Features Complement CLIP Features And Features Learned from Voxels in 3D Object Classification}, Workshop on Open-World 3D Scene Understanding with Foundation Models (OpenSUN3D) at the International Conference on Computer Vision (ICCV), October 2025 (non-archival)
+
+\item \underline{Michael Guerzhoy}, \textit{Getting Used to Pointers with Pointer Drills}, in Proc. of the 2025 ACM Conference on Innovation and Technology in Computer Science Education (ITiCSE), July 2025 
+
+\item \textbf{Ronaldo Luo}, \textbf{Gary Liang}, \textbf{Cindy Liu}, \textbf{Adam Kabbara}, \textbf{Minahil Bakhtawar}, \textbf{Kina Kim}, and \underline{Michael Guerzhoy}, \textit{Automatically Detecting Amusing Games in Wordle}, in Proc. of the International Conference on Computational Creativity (ICCC), Campinas, June 2025 
+
+%\item \textbf{Dawn (Mengli) Duan} and \underline{Michael Guerzhoy}, \textit{Automatic Extraction of Performance Metrics from the Scientific Literature with an Extract-and-Verify Loop}, at the \textit{LLM Workshop} at the Canadian Conference on Artificial Intelligence (CanAI), Calgary, Alberta, May 2025
+
+%\item \textbf{Gary Liang}, \textbf{Adam Kabbara}, \textbf{Cindy Liu}, \textbf{Ronaldo Luo}, \textbf{Kina Kim}, and \underline{Michael Guerzhoy}, \textit{Semantic, Orthographic, and Morphological Biases in Humans' Wordle Gameplay}, at the AAAI 2025 Undergraduate Research Challenge, 2025. Forthcoming in \textit{AI Matters}, 2025
+
+\item \textbf{Chunsheng (Jason) Zuo}, Pavel Guerzhoy, and \underline{Michael Guerzhoy}, \textit{Positional Information Can Emerge Through Causal Attention Making Nearby Token Embeddings Similar Even Without Positional Encodings}, In Proc. International Conference on Computational Linguistics (COLING), 2025 
+
+
+
+%\item \textbf{Chunsheng (Jason) Zuo}, Pavel Guerzhoy, and \underline{Michael Guerzhoy}, \textit{Positional Information Can Emerge Through Causal Attention Making Nearby Token Embeddings Similar Even Without Positional Encodings}, In Interpretable AI Workshop at Neural Information Processing Systems (NeurIPS), 2024 (non-archival)
+
+\item \textbf{Kexin Chen}, \underline{Michael Guerzhoy}, \textit{Exploring Complex Mental Health Symptoms via Classifying Social Media Data with Explainable LLMs}, in Machine Learning for Health (ML4H) Symposium at Neural Information Processing Systems (NeurIPS), 2024 (non-archival)
+
+\item \textbf{Juho Kim}, \underline{Michael Guerzhoy}, \textit{Exploring the ``Honour Culture" Theory Using Social Media Data}, in Proc. Workshop on Social Influence in Conversations at Empirical Methods in Natural Language Processing, 2024 
+
+\item \textbf{Sophie Lee}, \underline{Michael Guerzhoy}, \textit{Quantifying the Complexity of Literary Fiction}, lightning talk at the  Natural Language Processing for Digital Humanities Workshop at Empirical Methods in Natural Language Processing (EMNLP), 2024 
+
+\item \underline{Michael Guerzhoy}, \textit{Occam's Razor and Bender and Koller's Octopus}, in Proc. of the Workshop on Teaching NLP at the Annual Conference of the Association for Computational Linguistics (ACL), 2024 
+
+\item \textbf{Kamron Zaidi} and \underline{Michael Guerzhoy}, \textit{Predicting User Perception of Move Brilliance in Chess}, in Proc. of the International Conference on Computational Creativity (ICCC), 2024. Received media coverage at \textbf{New Scientist} and \textbf{CBC Radio} among others.
+
+\item \textbf{Chunsheng (Jason) Zuo}, \underline{Michael Guerzhoy}, \textit{Breaking Symmetry When Training Transformers}, In the Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL) Student Research Workshop, 2024 (non-archival)
+
+\item \textbf{Kexin (Coco) Chen} and \underline{Michael Guerzhoy}, \textit{Exploring The Mental Health Aspects of Chronic Lyme Disease Through Analyzing Social Media Data with Explainable LLMs}, International Conference on Artificial Intelligence in Medicine (AIME), 2024 (non-archival)
+
+\item \textbf{Amy Saranchuk} and \underline{Michael Guerzhoy}, \textit{Effect of Rotation Angle in Self-Supervised Pretraining is Dataset-Dependent}, Conference on Robots and Vision (CRV) Workshops, 2024 (non-archival)
+
+\item \textbf{Cameron Smith, Yiping (Sandra) Wang}, and \underline{Michael Guerzhoy}, \textit{Synthetic Datasets for Exploring How ConvNets and ViTs Classify Images When Colour is An Important Cue}, Conference on Robots and Vision (CRV) Workshops, 2024 (non-archival)
+
+\item \textbf{Sajjad Hashemi}, \underline{Michael Guerzhoy}, and Noah Paulson, \textit{Toward Learning Latent-Variable Representations of Microstructures by Optimizing in Spatial Statistics Space}, in Proc. International Conference on Learning Representations (ICLR) Tiny Papers, 2024.
+
+\item \textbf{Noelle Lim, Claire S. Lee}, and \underline{Michael Guerzhoy}, \textit{RoBERTa Picks Up Cues of Potential Comorbid ADHD in People Reporting Anxiety when Keywords Are Not Enough}, in AAAI Spring Symposium on Clinical Foundation Models, 2024 (non-archival; slight extension of the CLPsych paper)
+
+\item \textbf{Noelle Lim, Claire S. Lee}, and \underline{Michael Guerzhoy}, \textit{Detecting a Proxy for Potential Comorbid ADHD in People Reporting Anxiety Symptoms from Social Media Data}, in Proc. of the Workshop on Computational Linguistics and Clinical Psychology (CLPsych) at Conference of the European Chapter
+of the Association for Computational Linguistics (EACL),  2024
+\item \textbf{Pavlos Constas, Vikram Rawal, Matthew Honorio Oliveira, Andreas Constas, Aditya Khan, Kaison Cheung, Najma Sultani, Carrie Chen, Micol Altomare, Michael Akzam, Jiacheng Chen, Vhea He, Lauren Altomare, Heraa Murqi, Asad Khan, Nimit Amikumar Bhanshali, Youssef Rachad}, \underline{Michael Guerzhoy}. Toward A Reinforcement-Learning-Based System for Adjusting Medication to Minimize Speech Disfluency
+In Proc. of the Machine Learning for Cognitive and Mental Health Workshop at the AAAI Conference on Artificial Intelligence (AAAI), 2024.
+
+
+\item \underline{Michael Guerzhoy}, \textit{``Medium-n studies" in computing education conferences}, in Proc. Koli Calling International Conference on Computer Science Education, 2023 
+
+\item \underline{Michael Guerzhoy} and \textbf{Jackson Kaunismaa}, \textit{How Do ConvNets Understand Image Intensity?}, in Proc. International Conference on Learning Representations (ICLR) Tiny Papers, 2023.
+
+
+\item Amol A. Verma, Hassan Massoom, Chloe Pou-Prom, Saeha Shin, \underline{Michael Guerzhoy}, Muhammad Mamdani, Developing and validating natural language processing algorithms to estimate the burden of venous thromboembolism in hospitalized medical patients. \textit{Thrombosis Research}, 2022.
+
+\item  David Landsman, Ahmed Abdelbasit, Christine Wang, \underline{Michael Guerzhoy}, \textbf{Ujash Joshi}, \textbf{Shaun Mathew}, Chloe Pou-Prom, David Dai, Victoria Pequegnat, Joshua Murray, Kamalprit Chokar, Michaelia Banning, Muhammad Mamdani, Sharmistha Mishra,  Jane Batt. St. Michael’s Hospital Tuberculosis Database (SMH-TB), a retrospective cohort of electronic health record data and variables extracted using natural language processing. \textit{PLoS One}, 2021.
+
+
+
+\item \textbf{Anthony Hein, May Jiang, Vydhourie Thiyageswaran}, and \underline{Michael Guerzhoy}. Random Forests for Opponent Hand Estimation in Gin Rummy. In Proc. of the Educational Advances in Artificial Intelligence (EAAI), in conjunction with AAAI,  2021.
+
+\item \textbf{Tabitha Belshee, Adam Chang, Nebil Ibrahim, Mikako Inaba, Nikoo Karbassi, Angelo Kayser-Browne, Hye Jee Kim, Rachel Kim, Seungjae Ryan Lee, Natalia Orlovsky}, \underline{Michael Guerzhoy}. Improving Current and Future Offerings of a Data Science Course through Large-Scale Observation of Students. In Proc. of the 51st  ACM Technical Symposium on Computer Science Education (SIGCSE), 2021.
+
+
+\item \textbf{Claire S. Lee}, \textbf{Jeremy Du}, and \underline{Michael Guerzhoy}. Auditing the COMPAS Recidivism Risk Assessment Tool: Predictive Modeling and Fairness in Machine Learning in CS1. In Proc of the Conference on	Innovation and Technology in Computer Science Education (ITiCSE), 2020. 
+
+
+
+\item Todd Neller et al., Model AI Assignments 2020. In Proc. of the Educational Advances in Artificial Intelligence (EAAI), in conjunction with AAAI 2020. (Contribution: ``Predicting and Preventing Deaths in the ICU: Designing and Analyzing an AI System'', with Stephen Keeley)
+\item Todd Neller et al., Model AI Assignments 2019. In Proc. of the Educational Advances in Artificial Intelligence (EAAI), in conjunction with AAAI 2019. (Contribution: ``Building a Fake News Detector'', with Lisa Zhang)
+
+
+\item \underline{Michael Guerzhoy}. Introduction to Data Science as a Pathway to Further Study in Computing. Poster at the ACM International Computing Education Research (ICER) 2019, Toronto, ON
+
+\item
+\textbf{Joshua Seltzer}, \underline{Michael Guerzhoy}, and Monika Havelka. Computer vision methodologies for automated processing of camera trap data: a technological review. Book chapter in \textit{High Spatial Resolution Remote Sensing: Data, Techniques, and Applications}.  CRC Press, 2018.
+
+
+\item Todd W. Neller, Zack Butler, Nate Derbinsky, Heidi Furey, Fred Martin, \underline{Michael Guerzhoy}, Ariel Anders, and Joshua Eckroth. Model AI Assignments 2018.  In Proc. of the Educational Advances in Artificial Intelligence (EAAI), in conjunction with AAAI 2019. (Contributions: ``Neural Networks for Face Recognition with TensorFlow''; ``Understanding How Recurrent Neural Networks Model Text'', with Renjie Liao)
+
+\item  Nick Parlante, Julie Zelenski, Ben Stephenson, Ali Malik, Phil Ventura, \underline{Michael Guerzhoy}, David Reed, Josh Hug. Nifty Assignments.  In Proc. of the 48th ACM Technical Symposium on Computer Science Education, Baltimore, MD. ACM, 2018.
+
+
+\item
+\textbf{Ujash Joshi} and \underline{Michael Guerzhoy}. Photo Orientation with Convolutional Neural Networks. In Proc. of the Conference on Computer and Robot Vision, Edmonton, AB, May 2017.  
+
+\item
+Nick Parlante, Julie Zelenski, Josh Hug, \underline{Michael Guerzhoy}, Dave Feinberg, Kevin Wayne, Jackie Chi Kit Cheung, Kunal Mishra, and Francois Pitt. Nifty Assignments. In Proc. of the 47th ACM Technical Symposium on Computer Science Education, 2017.
+
+	
+
+\item
+\underline{Michael Guerzhoy} and Aaron Hertzmann. Learning Latent Factor Models of Travel Data for Travel Prediction and Analysis. To appear in {\it Proc. of the Canadian Conference on Artificial Intelligence (AI 2014)} , May  2014.
+
+\item
+\underline{Michael Guerzhoy} and Aaron Hertzmann. Learning Latent Factor Models of Human Travel. At {\it NIPS Workshop on Social Network and Social Media Analysis: Methods, Models and Applications (Social 2012)}, Dec. 2012.
+
+\item
+\underline{Michael Guerzhoy} and Hui Zhou. Segmentation of Rectangular Objects Lying on an Unknown Background in a Small Preview Scan Image. In {\it Proc. of the Canadian Conference of Computer and Robot Vision (CRV 2008)}, May 2008.
+
+
+\end{revnumerate}
+
+
+\subsection*{Refereed talks}
+\begin{revnumerate}
+    \item
+    \underline{Michael Guerzhoy}, \textit{Why a Formal Definition of Computational Creativity Might be Elusive}, Workshop on Theoretical Computer Science and Computational Creativity (TCS\&CC), at the International Conference on Computational Creativity (ICCC), Coimbra, Portugal, 2026 (accepted)
+    \item
+    \underline{Michael Guerzhoy}, \textit{Model Checking in Practice When Teaching Frequentist Statistics}, Statistical Society of Canada (SSC) Annual Meeting, Hamilton, ON, 2026 
+	\item
+	\underline{Michael Guerzhoy}, \textit{Barrier to Complexity-Theoretic Proofs that ``AGI" is Impossible}, Workshop on Computational Creativity and Information Theory abstract, at the International Conference on Computational Creativity (ICCC), Campinas, Brazil, 2025
+
+\item \textbf{Gary Liang}, \textbf{Adam Kabbara}, \textbf{Cindy Liu}, \textbf{Ronaldo Luo}, \textbf{Kina Kim}, and \underline{Michael Guerzhoy}, \textit{Semantic, Orthographic, and Morphological Biases in Humans' Wordle Gameplay}, at the AAAI 2025 Undergraduate Research Challenge, 2025. 
+    
+    \item \underline{Michael Guerzhoy}, \textit{Synergies between Intro to Data Science and Intro to Programming via Purely Functional Programming},   Statistical Society of Canada (SSC) Annual Meeting, Saskatoon, SK, 2025
+	\item \textbf{Juho Kim} and \underline{Michael Guerzhoy}, \textit{Observing the Southern US Culture of Honor using Large-Scale Social Media Analysis}, International Conference on Computational Social Science (IC$^2$S$^2$), Philadelphia, PA, 2024
+	\item \textbf{Tracy Qian, Max Piasevoli} and \underline{Michael Guerzhoy}, \textit{Automatic Model Selection using Wasserstein Generative Adversarial Networks}, Statistical Society of Canada (SSC) Annual Meeting, St. John's, NB,  2024
+	\item \textbf{Sajjad Hashemi}, \underline{Michael Guerzhoy}, and Noah Paulson, Toward Learning Latent-Variable Representations of Microstructures by Optimizing in Spatial Statistics Space, Materials Research Society (MRS) Meeting, Seattle, WA, 2024
+	\item \textbf{Noelle Lim, Claire S. Lee}, and \underline{Michael Guerzhoy},  Detecting and Analyzing Potential Comorbid ADHD in People Reporting Anxiety Symptoms from Social Media Data Using Transformers, T-CARIEM AI in Medicine Conference, Toronto, ON, 2023
+	\item 
+	\underline{Michael Guerzhoy}, ``Taking Data and Models Seriously: Teaching Machine Learning and Data Science to Students Across Campus by Teaching Models" at the 9th Symposium on Educational Advances in Artificial Intelligence (in conjunction with AAAI), Feb. 2019, Honolulu, HI. Feb 2019.
+	
+	\item
+\underline{Michael Guerzhoy} and Nathan Taback, ``Hierarchical Bayesian Models for Uncertainty-Quantified Ranking of Restaurant Chains by Food Safety Compliance" at the 43rd Annual Meeting of the Statistical Society of Canada, Halifax, NS,  June 2015.
+
+\item
+\underline{Michael Guerzhoy}, ``Ranking Restaurant Chains in Canada by Food Safety Compliance: Combining Data From Multiple Sources for Ranking" at the Statistical Society of Canada Student Conference, Toronto, ON, May 2014
+
+\end{revnumerate}
+
+
+\subsection*{Patents}
+\begin{revnumerate}
+\item
+\underline{Michael Guerzhoy} and Hui Zhou. Method and Apparatus for Detecting Objects in an Image. US Patent 8,433,133. Issued Apr. 2013. 
+\item
+\underline{Michael Guerzhoy} and Hui Zhou. Method and Apparatus for Detecting Objects in an Image. US Patent 8,098,936. Issued Jan. 2012
+\item
+\underline{Michael Guerzhoy} and Hui Zhou. Method and System for Automatically Determining the Orientation of a Digital Image. US Patent 8,094,971. Issued Jan. 2012
+% \item
+% \underline{Michael Guerzhoy} and Hui Zhou. Methods and Apparatus for Object Detection within an Image. Published US Patent application (USPTO\# 20090202175). Published Aug. 2009
+% \item
+% \underline{Michael Guerzhoy} and Hui Zhou. Method for Extracting an Inexact Rectangular Region into an Axis-Aligned Rectangle Image. Published US Patent application (USPTO\# 2009021533). Published Jan. 2009
+\end{revnumerate}
+
+\subsection*{Published Technical Reports and Columns}
+\begin{revnumerate}
+\item \underline{Michael Guerzhoy}, Marion Neumann, Pat Virtue, et al. \textit{EAAI-23 Blue Sky Ideas in Artificial Intelligence Education from the AAAI/ACM SIGAI New and Future AI Educator Program}. AI Matters 9.2 (2023): 24-29.
+
+\item \underline{Michael Guerzhoy}, Marion Neumann, et al. \textit{EAAI-22 Blue Sky Ideas in Artificial Intelligence Education from the AAAI/ACM SIGAI New and Future AI Educator Program}. AI Matters 8.2 (2022): 16-21.
+	
+\item \underline{Michael Guerzhoy}, Lisa Zhang, and \textbf{Georgy Noarov}.  AI Education Matters: Building a Fake News Detector in AI Matters 5(3), 2019.
+
+\item
+\underline{Michael Guerzhoy}. AI education matters: teaching with deep learning frameworks in introductory machine learning courses. \textit{AI Matters} 4(3): 14-15 (2018)
+
+\item
+\underline{Michael Guerzhoy} and Nathan Taback.  Ranking Restaurant Chains by the Number of Health Violations Found during Inspections. Published on \texttt{cbc.ca} at \url{http://www.cbc.ca/marketplace/blog/restaurant-secrets-survey-rankings}. April 2014
+\end{revnumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Miscellaneous Presentations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{revnumerate}
+
+% \item
+% ``Predicting and Preventing Deaths in the ICU: Designing and Analyzing an AI System" at the 10th Symposium on Educational Advances in Artificial Intelligence (in conjunction with AAAI), Feb. 2020, New York, NY. Feb. 2020. (With Stephen Keeley).
+
+
+% \item
+% ``Building a Fake News Detector" at the Model AI Assignments session, at the Model AI Assignments session, at the 9th Symposium on Educational Advances in Artificial Intelligence (in conjunction with AAAI), Feb. 2019, Honolulu, HI. Feb 2019.
+
+% \item
+% ``AI Engines for Pong" at the Nifty Assignments panel at SIGCSE (Special Interest Group in Computer Science Education), 2018,  Baltimore, MD. 
+
+% \item
+% ``Model AI Assignment: Understanding How Recurrent Neural Networks Model Text" at the Model AI Assignments session, the Model AI Assignments session, the 8th Symposium on Educational Advances in Artificial Intelligence (in conjunction with AAAI), Jan. 2018, New Orleans, LA
+
+% \item
+% ``Model AI Assignment: Neural Networks for Face Classification with TensorFlow" at the Model AI Assignments session, the 8th Symposium on Educational Advances in Artificial Intelligence (in conjunction with AAAI), Jan. 2018, New Orleans, LA
+
+\item
+\underline{Michael Guerzhoy}, ``A Tour of PyTorch" at the  Workshop at the Toronto Machine Learning Summit, Toronto, ON, Nov. 2017
+
+\item
+\underline{Michael Guerzhoy}, ``How Convolutional Neural Networks See." Guest talk at the Canadian Undergraduate Computer Science Conference, Toronto, ON, June 2017.
+
+
+% \item
+% ``Automatically Solving SAT/TOEFL Synonym Questions with Computational Linguistics" at the Nifty Assignments panel at SIGCSE (Special Interest Group in Computer Science Education), Seattle, WA, March 2017
+
+
+% \item
+% ``Latent Factor Models of Travel Data for Travel Modelling and Analysis" at the Canadian Conference on Artificial Intelligence, Montreal, QC, May 2014
+
+
+\end{revnumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Funding}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{revnumerate}
+	
+	\item \underline{Michael Guerzhoy}, \textbf{Kexin (Coco) Chen}, \textbf{Chuoyi (Sky) Hou}, \textit{Research and Development of an AI based Software to Recognize Realtime TV Commercials on Low-power Computing Equipment}. Mitacs Accelerate award for the University of Toronto/CaashbackTV partnership, 2024-2025. Amount: CAD 30,000 + equipment expenses. Academic supervisor: \underline{Michael Guerzhoy}
+	
+	\item \underline{Michael Guerzhoy}, Work-Study Program, University of Toronto, 2023. Amount ~CAD 3000. The funding was used to support a work-study student working on data science research and the development of materials for introductory computer science courses.
+
+	
+
+	\item \underline{Michael Guerzhoy}, Houze Xu, \textit{Text mining API (application programming interface) for automated key words extraction and tag analysis}. Mitacs Business Strategy Internship award for a Datahoot Technologies Inc./University of Toronto partnership, 2023. Amount: CAD 10,000. Academic supervisor: \underline{Michael Guerzhoy}. 
+
+	\item \underline{Michael Guerzhoy}, Marion Neumann, and Pat Virtue, New and Future AI Educator Program support. Funder: ACM SIGAI. Amount: USD 5,000. The funding was used to support 5 awardees of the New and Future AI Educator Program at EAAI-22.
+
+	\item \underline{Michael Guerzhoy}, Eldan Cohen, Vijaykumar Maraviya, \textit{Paper-Peer Reviewer Recommender System}. Mitacs Accelerate award for a JMIR Publications Inc (Journal of Internet Medical Research)/University of Toronto partnership, 2021. Amount: CAD 10,000. Academic co-supervisors: \underline{Michael Guerzhoy} and Eldan Cohen.
+
+
+	\item \underline{Michael Guerzhoy} and Marion Neumann, Travel and registration support scholarship program for EAAI-22/23. Funder: AI Journal. Amount: EUR 5,000. The funding was used to support ~15 attendees of EAAI-22/23  who demonstrated financial need. Some attendees were supported as part of the New and Future AI Educator Program.
+
+
+	\item Lisa Torrey and \underline{Michael Guerzhoy}, Travel and registration support scholarship program for EAAI-21. Funder: AI Journal. Amount: EUR 2,000. The funding was used to support ~20 attendees of EAAI-21 (run virtually) who demonstrated financial need. 
+
+
+
+
+
+
+\end{revnumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\resheading{Technical Skills}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{itemize}
+%\item
+%	Markup Languages
+%	\begin{itemize}
+%		\resitem{CSS, \LaTeX, (X)HTML}
+%	\end{itemize}
+%
+%\item
+%	Programming Languages
+%	\begin{itemize}
+%		\resitem{ASP, C, Java, Javascript, PHP, Python, SQL, Visual Basic}
+%	\end{itemize}
+%
+%\item
+%	Specialized Software
+%	\begin{itemize}
+%		\resitem{Maple, MATLAB, S-Plus}
+%	\end{itemize}
+%\end{itemize}
+\end{document}
